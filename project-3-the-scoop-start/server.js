@@ -1,12 +1,35 @@
 // database is let instead of const to allow us to modify it in test.js
+/*
+  Database: JS object containing all stored model instances
+  'users' & 'articles': contains all created users and articles. Each will have ID
+  increases with 'nextArticleId'
+*/
 let database = {
-  users: {},
+  users: {}, // objects
+  comments: {},
   articles: {},
-  nextArticleId: 1
+  nextArticleId: 1,
+  nextCommentId: 1
 };
 
+/*
+  routes: containing all routes needed for The Scoop
+  - the keys are the path of the request, values are objects containing all possible HTTP verbs for that path
+*/
 const routes = {
-  '/users': {
+   '/comments': { // property
+
+  },
+   '/comments/:id': {
+
+  },
+   '/comments/:id/upvote': {
+
+  },
+   '/comments/:id/downvote': {
+
+  },
+   '/users': {
     'POST': getOrCreateUser
   },
   '/users/:username': {
